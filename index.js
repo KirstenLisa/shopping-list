@@ -45,5 +45,4 @@ $(checkItem);
 $(delItem);
 
 
-/* .submit() , preventDefault(), toggleClass(), and closest(). */
-/* Using this and event delegation (USING ON) */
+
