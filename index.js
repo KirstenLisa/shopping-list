@@ -5,7 +5,8 @@ function addNewItem() {
 
 /* 1.step: finding user input => newitem */
         let newItem = $(this).find('input[name="shopping-list-entry"]').val();
-
+        $(this).find('input[name="shopping-list-entry"]').val("");
+        
 /* 2.step: creating new HTML-element, adding all classes needed */
         let newEl = $(`<li><span class="shopping-item">${newItem}</span>
         <div class="shopping-item-controls"><button class="shopping-item-toggle">
@@ -23,10 +24,10 @@ function addNewItem() {
 
 /* check and uncheck items on the list by clicking */
 
- function checkItem() {
-     $(".shopping-list").on("click", "shopping-item-toggle", function(event) {
-         let targetItem = $(this).find(name="shopping-list-item");
-         targetItem.toggleClass(".shopping-item shopping-item__checked");
+function checkItem() {
+     $(".shopping-list").on("click", ".shopping-item-toggle", function(event) {
+        $(this).parents().closest('li').find('.shopping-item')
+        .toggleClass("shopping-item__checked");
      });
  }
 
